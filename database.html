@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="mt-4">
+    <header data-bs-theme="dark" class="mb-4 mt-4">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="bootstrap-5.3.2-examples/album/index.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="table.php">Hasil Formulir</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="wfsdatabase.php">Peta Ploting Titik Wisata</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card mt-4 shadow">
+            <div class="card-header text-center mt-5">
+                <h3>Tambah Rekomendasi Wisata</h3>
+            </div>
+            <div class="card-body">
+                <form action="/pgweb-acara8/input.php" onsubmit="return validateForm()" method="post">
+                    <label for="nama_wisata">Nama Wisata:</label><br>
+                    <input type="text" id="nama_wisata" name="nama_wisata" value=""><br>
+
+                    <label for="harga_tiket">Harga Tiket:</label><br>
+                    <input type="text" id="harga_tiket" name="harga_tiket" value=""><br>
+
+                    <label for="jam_buka">Jam Buka:</label><br>
+                    <input type="text" id="jam_buka" name="jam_buka"" value=""><br>
+                        
+                        <label for=" jam_tutup">Jam Tutup:</label><br>
+                    <input type="text" id="jam_tutup" name="jam_tutup"" value=""><br>
+                        
+                        <label for=" longitude">Longitude:</label><br>
+                    <input type="text" id="longitude" name="longitude" value=""><br>
+
+                    <label for="latitude">Latitude</label><br>
+                    <input type="text" id="latitude" name="latitude" value=""><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-2">
+        <small class="text-secondary">raissanirbana@2023</small>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

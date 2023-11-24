@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul pada tab browser -->
+    <title> PARIWISATA KABUPATEN BANDUNG BARAT </title>
+    <!-- Bootsrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <!-- <link rel="stylesheet" href="https://cdn/jsdelivr.net/npm/@docsearch/css@3> -->
+    <!-- Search CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-search/leaflet-search.css" />
+    <!-- Geolocation CSS Library for Plugin -->
+    <link rel="stylesheet"
+        href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css" />
+    <!-- Leaflet Mouse Position CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.css" />
+    <!-- Leaflet Measure CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-measure/leaflet-measure.css" />
+    <!-- EasyPrint CSS Library -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-easyprint/easyPrint.css" />
+    <!----Leaft Routing -->
+    <link rel="stylesheet" href="assets/plugins/leaflet-routing/leaflet-routing-machine.css" />
+    <!----Marker Cluster-->
+    <link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.css" />
+    <link rel="stylesheet" href="assets/plugins/leaflet-markercluster/MarkerCluster.Default.css" />
+
+
+    <style>
+        #map {
+
+            height: 80vh;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>WEBGIS KABUPATEN BANDUNG BARAT</h1>
+        <p>Peta Persebaran Titik Pariwisata Kabupaten Bandung Barat </p>
+    </div>
+    <div id="map"></div>
+    <!-- Bootsrap -->
+    <!-- Leaflet Javascript library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Search JavaScript Library -->
+    <script src="assets/plugins/leaflet-search/leaflet-search.js"></script>
+    <!-- Geolocation Javascript Library -->
+    <script
+        src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+    <!-- Leaflet Mouse Position JavaScript Library -->
+    <script src="assets/plugins/leaflet-mouseposition/L.Control.MousePosition.js"></script>
+    <!-- Leaflet Measure JavaScript Library -->
+    <script src="assets/plugins/leaflet-measure/leaflet-measure.js"></script>
+    <!-- EasyPrint JavaScript Library -->
+    <script src="assets/plugins/leaflet-easyprint/leaflet.easyPrint.js"></script>
+    <!----Leaft Routing -->
+    <script src="assets/plugins/leaflet-routing/leaflet-routing-machine.js"></script>
+    <!----Marker Cluster-->
+    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster.js"></script>
+    <script src="assets/plugins/leaflet-markercluster/leaflet.markercluster-src.js"></script>
+
+    <script>
+        /* Initial Map */
+        var map = L.map('map').setView([-6.85661, 107.41960], 10);
+
+        /* Tile Basemap */
+        var basemap1 = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | <a href="DIVSIG UGM" target="_blank">DIVSIG UGM</a>'
+        });
+        var basemap2 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri | <a href="Latihan WebGIS" target="_blank">DIVSIG UGM</a>'
+        }); var basemap3 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri | <a href="Lathan WebGIS" target="_blank">DIVSIG UGM</a>'
+        });
+        var basemap4 = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptile s.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+        });
+        basemap1.addTo(map);
+
+        // Layer Marker
+        var marker1 = L.marker([-6.78301, 107.65243], { draggable: true });
+        marker1.addTo(map); marker1.bindPopup("Terminal Wisata Grafik Cikole");
+        var marker2 = L.marker([-6.82834952343, 107.633964058]);
+        marker2.addTo(map); marker2.bindPopup("Noah's Park");
+        var marker3 = L.marker([-6.77879012554, 107.637273583]);
+        marker3.addTo(map); marker3.bindPopup("Orchid Forest Cikole");
+        var marker4 = L.marker([-6.82817, 107.66042]);
+        marker4.addTo(map); marker4.bindPopup("Tebing Karaton");
+        var marker5 = L.marker([-6.80204963, 107.59088561]);
+        marker5.addTo(map); marker5.bindPopup("Lembang Park Zoo");
+        var marker6 = L.marker([-6.808054006, 107.594873246]);
+        marker6.addTo(map); marker6.bindPopup("Kampung Gajah");
+        var marker7 = L.marker([-6.8189106407, 107.596100326]);
+        marker7.addTo(map); marker7.bindPopup("Jendela Alam");
+        var marker8 = L.marker([-7.009849135, 107.205713985]);
+        marker8.addTo(map); marker8.bindPopup("Curug Malela");
+        var marker9 = L.marker([-6.84723085, 107.6259373]);
+        marker9.addTo(map); marker9.bindPopup("Dago Dream Park");
+        var marker10 = L.marker([-6.902684421516, 107.360574657922]);
+        marker10.addTo(map); marker10.bindPopup("Cikahuripan Green Canyon");
+        var marker11 = L.marker([-6.858968483, 107.4636415610]);
+        marker11.addTo(map); marker11.bindPopup("Wahoo Waterworld");
+        var marker12 = L.marker([-6.853586194155, 107.356370328]);
+        marker12.addTo(map); marker12.bindPopup("Wana Mandala Geude");
+        var marker13 = L.marker([-6.8414896949, 107.624084951575]);
+        marker13.addTo(map); marker13.bindPopup("Sarae Hills");
+
+
+        var wfsgeoserver1 = L.geoJson(null, {
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+                    //icon: L.icon({
+                    //iconUrl: "assets/img/marker/fas_rumahsakit_rujukan.png", //URL icon marker
+                    // iconSize: [32, 32], //ukuran icon marker
+                    // iconAnchor: [16, 32], //icon marker offset
+                    // popupAnchor: [0, -32], //popup offset
+                    //  tooltipAnchor: [16, -20] //tooltip offset
+                    // })
+                });
+            },
+            onEachFeature: function (feature, layer) {
+                var content = "Kecamatan:" + feature.properties.wadmkc + "<br>" +
+                    "Kelurahan:" + feature.properties.wadmkk;
+                layer.on({
+                    click: function (e) {
+                        wfsgeoserver1.bindPopup(content).openPopup;
+                    },
+                    mouseover: function (e) {
+                        wfsgeoserver1.bindTooltip(feature.properties.wadmkc).openTooltip;
+                    },
+                    mouseout: function (e) {
+                        wfsgeoserver1.closePopup();
+                        wfsgeoserver1.closeTooltip();
+                    }
+                });
+            }
+        });
+        $.getJSON("wfsgeoserver1.php", function (data) {
+            wfsgeoserver1.addData(data);
+            wfsgeoserver1.addTo(map);
+            map.fitBounds(wfsgeoserver1.getBounds());
+        });
+
+
+        /* Control Layer */
+        var baseMaps = {
+            "OpenStreetMap": basemap1,
+            "Esri World Street": basemap2,
+            "Esri Imagery": basemap3,
+            "Stadia Dark Mode": basemap4
+        };
+        L.control.layers(baseMaps).addTo(map);
+
+        /* Image Watermark */
+        L.Control.Watermark = L.Control.extend({
+            onAdd: function (map) {
+                var img = L.DomUtil.create('img');
+                img.src = 'assets/img/logo/LOGO_SIG_BLUE.png';
+                img.style.width = '150px';
+                return img;
+            }
+        });
+        L.control.watermark = function (opts) {
+            return new L.Control.Watermark(opts);
+        }
+        L.control.watermark({ position: 'bottomleft' }).addTo(map);
+
+        /* Image Legend */
+        L.Control.Legend = L.Control.extend({
+            onAdd: function (map) {
+                var img = L.DomUtil.create('img');
+                img.src = 'assets/img/legend/Legenda2.jpg';
+                img.style.width = '150px';
+                return img;
+            }
+        });
+        L.control.Legend = function (opts) {
+            return new L.Control.Legend(opts);
+        }
+        L.control.Legend({ position: 'bottomleft' }).addTo(map);
+
+        /*Plugin Search */
+        var searchControl = new L.Control.Search({
+            position: "topleft",
+            layer: wfsgeoserver1, //Nama variabel layer 
+            propertyName: 'wadmkc', //Field untuk pencarian 
+            marker: false,
+            moveToLocation: function (latlng, title, map) {
+                var zoom = map.getBoundsZoom(latlng.layer.getBounds());
+                map.setView(latlng, zoom);
+            }
+        });
+        searchControl.on('search:locationfound', function (e) {
+            e.layer.setStyle({
+                fillColor: '#ffff00',
+                color: '#0000ff'
+            });
+        }).on('search:collapse', function (e) {
+            featuresLayer.eachLayer(function (layer) {
+                featuresLayer.resetStyle(layer);
+            });
+        });
+        map.addControl(searchControl);
+        /*Plugin Geolocation */
+        var locateControl = L.control
+            .locate({
+                position: "topleft",
+                drawCircle: true,
+                follow: true,
+                setView: true,
+                keepCurrentZoomLevel: false,
+                markerStyle: {
+                    weight: 1,
+                    opacity: 0.8,
+                    fillOpacity: 0.8,
+                },
+                circleStyle: {
+                    weight: 1,
+                    clickable: false,
+                },
+                icon: "fas fa-crosshairs",
+                metric: true,
+                strings: {
+                    title: "Click for Your Location",
+                    popup: "You're here. Accuracy {distance} {unit}",
+                    outsideMapBoundsMsg: "Not available",
+                },
+                locateOptions: {
+                    maxZoom: 16,
+                    watch: true,
+                    enableHighAccuracy: true,
+                    maximumAge: 10000,
+                    timeout: 10000,
+                },
+            })
+            .addTo(map);
+
+        /*Plugin Mouse Position Coordinate */
+        L.control.mousePosition({ position: "bottomright", separator: ",", prefix: "Point Coodinate: " }).addTo(map);
+
+        /*Plugin Measurement Tool */
+        var measureControl = new L.Control.Measure({
+            position: "topleft",
+            primaryLengthUnit: "meters",
+            secondaryLengthUnit: "kilometers",
+            primaryAreaUnit: "hectares",
+            secondaryAreaUnit: "sqmeters",
+            activeColor: "#FF0000",
+            completedColor: "#00FF00",
+        });
+        measureControl.addTo(map);
+
+        /*Plugin EasyPrint */
+        L.easyPrint({
+            title: "Print",
+        }).addTo(map);
+
+        /*Plugin routing*/
+        L.Routing.control({
+            waypoints: [
+                L.latLng(-7.02661504444, 107.374470816),
+                L.latLng(-7.04656565, 107.4343737)
+            ]
+        }).addTo(map);
+
+        /* Marker Cluster*/
+        var addressPoints = [
+            [7.02661504444, 107.374470816, "Kebun Biji Kopi Cipatat"],
+            [-7.04656565, 107.4343737, "Sanghyang Lawang"],
+            [-6.84979, 107.38216, "Danau Cinta"],
+            [-6.83588, 107.35432, "Kolam Renang Pelangi"],
+        ];
+
+        var markers = L.markerClusterGroup();
+        for (var i = 0; i < addressPoints.length; i++) {
+            var a = addressPoints[i];
+            var title1 = a[2];
+            var marker = L.marker(new L.latLng(a[0], a[1]), { title: title1 });
+            marker.bindPopup(title1);
+            markers.addLayer(marker);
+        }
+        map.addLayer(markers);
+
+    </script>
+
+</body>
+
+</html>
