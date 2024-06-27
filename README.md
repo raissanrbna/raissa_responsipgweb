@@ -1,4 +1,4 @@
-<h2>SIPADUNG: Sistem Informasi Pariwisata Bandung Barat<h2>
+<h2>SIRPADUNG: Sistem Informasi Pariwisata Bandung Barat<h2>
 <h4>Deskripsi produk</h4>
 <p>SIPARDUNG (Sistem Informasi Pariwisata Bandung Barat) ini merupakan platform WEBGIS yang menampilkan informasi terkait persebaran pariwisata Kabupaten Bandung Barat. WebGIS SIPADUNG ini dibangun untuk mempermudah wisatawan yang hendak berlibur ke Bandung, khususnya Kabupaten Bandung Barat</p>
 
